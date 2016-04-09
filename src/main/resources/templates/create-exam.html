@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Add new exam</title>
+
+
+  <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+
+  <link href="fonts/css/font-awesome.min.css" rel="stylesheet"></link>
+  <link href="css/animate.min.css" rel="stylesheet"></link>
+
+  <link href="css/custom.css" rel="stylesheet"></link>
+  <link rel="stylesheet" type="text/css" href="css/maps/jquery-jvectormap-2.0.3.css" ></link>
+  <link href="css/icheck/flat/green.css" rel="stylesheet" ></link>
+  <link href="css/floatexamples.css" rel="stylesheet" type="text/css" ></link>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/nprogress.js"></script>
+ </head>
+<body class="nav-md">
+
+  <div class="container body">
+
+
+    <div class="main_container">
+
+      <div th:replace="sidebar :: sidebar"/>
+
+      <div th:replace="top-nav :: top"/>
+
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+   
+
+        <div class="row">
+
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                  <h2>Add new exam <small></small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <br />
+                  <form class="form-horizontal form-label-left input_mask">
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Subject"/>
+                      <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <input type="text" class="form-control" id="inputSuccess3" placeholder="Exam name"/>
+                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Add Question</button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New question</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs">
+		  <li class="active"><a data-toggle="tab" href="#multiple-single">Multiplechoice - Single</a></li>
+		  <li><a data-toggle="tab" href="#multiple-multi">Multiplechoice - Multiple</a></li>
+		  <li><a data-toggle="tab" href="#yesno-question">Yes/No Question</a></li>
+		</ul>
+		
+		<div class="tab-content">
+		  <div id="multiple-single" class="tab-pane fade in active">
+		  	<br/>
+		  	<div class="row">
+		  		<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	               <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Question"/>
+	               <span class="glyphicon glyphicon-question-sign form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+	             
+			  	<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	               <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Answer1 [Correct]"/>
+	               <span class="glyphicon glyphicon-ok form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	               <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Answer2 [Incorrect]"/>
+	               <span class="glyphicon glyphicon-remove form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	               <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Answer3 [Incorrect]"/>
+	               <span class="glyphicon glyphicon-remove form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	               <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Answer4 [Incorrect]"/>
+	               <span class="glyphicon glyphicon-remove form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+		  	</div>
+		  </div>
+		  <div id="multiple-multi" class="tab-pane fade">
+		    <br/>
+		  	<div class="row">
+		  		<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Question"/>
+	               	<span class="glyphicon glyphicon-question-sign form-control-feedback left" aria-hidden="true"></span>
+	             </div>
+			  	<div class="col-md-12 col-sm-12 col-xs-12">
+	               <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..."/>
+				      </span>
+				      <input type="text" class="form-control" aria-label="..."/>
+				    </div>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..."/>
+				      </span>
+				      <input type="text" class="form-control" aria-label="..."/>
+				    	</div>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..."/>
+				      </span>
+				      <input type="text" class="form-control" aria-label="..."/>
+				    </div>
+	             </div>
+	             <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..."/>
+				      </span>
+				      <input type="text" class="form-control" aria-label="..."/>
+				    </div>
+	             </div>
+		  	</div>
+		  </div>
+		  <div id="yesno-question" class="tab-pane fade">
+		    <br/>
+		  	<div class="row">
+			  	<div class="col-md-12 col-sm-12 col-xs-12">
+	               <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..."/>
+				      </span>
+				      <input type="text" class="form-control" aria-label="..."/>
+				    </div>
+	             </div>
+		  	</div>
+		  </div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<style>
+	.modal-footer .btn{
+		margin-bottom : 0px;
+	}
+	.modal-header, .modal-footer{
+		//background-color: #2A3F54;
+		//color: #E7E7E7;
+	}
+	.modal-header .close{
+		//color : white;
+	}
+	.modal-content{
+		overflow: hidden;
+	}
+</style>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      <div th:replace="footer :: footer"/>
+      </div>
+
+    </div>
+
+  </div>
+ <div th:replace="inbody-script :: script"/>
+
+</body>
+
+</html>

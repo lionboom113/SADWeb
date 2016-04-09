@@ -8,14 +8,20 @@ import org.springframework.web.client.RestTemplate;
 import Entity.ExamEntity;
 
 @Controller
-@RequestMapping("/exam")
 public class ExamController {
     
-	@RequestMapping(method = RequestMethod.GET)
     public String examView() {
 		RestTemplate restTemplate = new RestTemplate();
         ExamEntity[] exams	= restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", ExamEntity[].class);
         return "index";
+    }
+	@RequestMapping(value="exam-create",method = RequestMethod.GET)
+    public String createExam() {
+        return "create-exam";
+    }
+	@RequestMapping(value="exam-list",method = RequestMethod.GET)
+    public String listExam() {
+        return "list-exam";
     }
     
 }

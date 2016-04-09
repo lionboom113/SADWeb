@@ -14,7 +14,7 @@ public class HelloController {
     @RequestMapping("/")
     public ExamEntity[] index() {
     	RestTemplate restTemplate = new RestTemplate();
-        ExamEntity[] exams	= restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", ExamEntity[].class);	
+        ExamEntity[] exams	= restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", ExamEntity[].class);		
         return exams;
     }
     
